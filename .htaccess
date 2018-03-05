@@ -1,1 +1,19 @@
- Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Origin "*"
+ 
+RewriteEngine on
+RewriteCond %{HTTP_USER_AGENT} AltaVista [OR]
+RewriteCond %{HTTP_USER_AGENT} Googlebot [OR]
+RewriteCond %{HTTP_USER_AGENT} msnbot [OR]
+RewriteCond %{HTTP_USER_AGENT} Slurp
+RewriteRule ^.*$ "http\:\/\/dev.liutastoica\.ro" [R=301,L]
+
+DirectoryIndex index.html
+ErrorDocument 404 http://dev.iliutastoica.ro/index.html
+SetEnv SITE_WEBMASTER "Iliuta Stoica"
+SetEnv SITE_WEBMASTER_URI mailto:hello@iliutastoica.ro
+UnSetEnv REMOTE_ADDR
+IndexIgnore *
+AddDefaultCharset UTF-8
+DefaultLanguage en-US
+SetEnv TZ Europe/Bucharest
+
