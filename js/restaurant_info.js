@@ -16,6 +16,9 @@ window.initMap = () => {
       });
       fillBreadcrumb();
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
+      google.maps.event.addDomListener(window, 'resize', function () {
+        map.setCenter(restaurant.latlng);
+      });
     }
   });
 }
