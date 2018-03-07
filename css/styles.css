@@ -249,7 +249,7 @@ nav h1 a {
   font-size: 20pt;
   font-weight: 200;
   letter-spacing: 0;
-  margin: 15px 0 30px;
+  margin: 1rem auto 1rem;
   text-transform: uppercase;
   line-height: 1.1;
 }
@@ -325,4 +325,53 @@ nav h1 a {
   #maincontent-top {
     flex-direction: row-reverse;
   }
+}
+
+@media (min-width: 1024px) {
+    #restaurant-container {
+        display: flex;
+        justify-content: baseline;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 6.5% 2em;
+    }
+    #restaurant-name {
+        display: block;
+        width: 100%;
+        flex: 1 1 100%;
+        order: 0;
+        margin: 1em auto 1em;
+        line-height: 1;
+    }
+    #restaurant-img {
+        display: block;
+        width: 50%;
+        flex: 1 1 50%;
+        order: 1;
+        max-width: 50%;
+    }
+    #restaurant-cuisine,
+    #restaurant-address {
+        display: block;
+        width: 50%;
+        flex: 0 0 100%;
+        align-self: flex-start;
+        order: 0;
+        max-width: 50%;
+        float: left;
+        margin: 0;
+        text-align: center;
+    }
+    #restaurant-hours {
+        align-items: flex-end;
+        order: 2;
+        margin: 0 0 0 3%;
+        float: right;
+        width: 45%;
+        background: white;
+        padding: 1em 1%;
+        align-self: baseline;
+    }
 }

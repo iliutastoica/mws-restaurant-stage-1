@@ -138,26 +138,36 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
+  li.className = 'restaurant-item';
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.setAttribute("alt", restaurant.name + " image");
+  image.setAttribute("width","100%");
+  image.setAttribute('itemprop', 'image');
   li.append(image);
 
   const name = document.createElement('h1');
+  name.className = 'restaurant-name';
   name.innerHTML = restaurant.name;
   li.append(name);
 
   const neighborhood = document.createElement('p');
+  neighborhood.className = 'restaurant-neighborhood';
   neighborhood.innerHTML = restaurant.neighborhood;
   li.append(neighborhood);
 
   const address = document.createElement('p');
+  address.className = 'restaurant-address';
   address.innerHTML = restaurant.address;
   li.append(address);
 
   const more = document.createElement('a');
+  more.className = 'restaurant-more';
   more.innerHTML = 'View Details';
+  more.setAttribute('title', 'View Details for ' + restaurant.name);
+  more.setAttribute('itemprop', 'url');
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)
 
