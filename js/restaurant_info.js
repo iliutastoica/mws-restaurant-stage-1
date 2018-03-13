@@ -60,7 +60,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img';
-  image.setAttribute("alt", restaurant.name + " image");
+  image.setAttribute("alt", restaurant.name + " Restaurant");
   image.setAttribute("width","100%");
   image.setAttribute('itemprop', 'image');
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
@@ -167,3 +167,4 @@ getParameterByName = (name, url) => {
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+
